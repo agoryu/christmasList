@@ -17,6 +17,7 @@ defmodule ChristmasList.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    get "/menu", MenuController, :index 
     resources "/connection", ConnectionController, only: [:new, :create]
 
     resources "/users", UserController

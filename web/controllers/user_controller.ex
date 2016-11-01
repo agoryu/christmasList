@@ -4,7 +4,7 @@ defmodule ChristmasList.UserController do
   alias ChristmasList.User
 
   def index(conn, _params) do
-    users = Repo.all(User)
+    users = User |> Repo.all |> Repo.preload([:presents])
     render(conn, "index.html", users: users)
   end
 
@@ -27,7 +27,7 @@ defmodule ChristmasList.UserController do
   end
 
   def show(conn, %{"id" => id}) do
-    user = Repo.get!(User, id)
+    user = User |> Repo.get!(id) |> Repo.preload([:presents])
     render(conn, "show.html", user: user)
   end
 

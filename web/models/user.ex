@@ -6,6 +6,7 @@ defmodule ChristmasList.User do
     field :mdp, :string
     field :email, :string
 
+    has_many :presents, ChristmasList.Present
     timestamps()
   end
 

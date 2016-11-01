@@ -15,20 +15,19 @@ defmodule ChristmasList.ConnectionController do
   defp sign_in(user, password, conn) when is_nil(user) do
     conn
     |> put_flash(:error, "Invalid username/password combination!")
-    |> redirect(to: page_path(conn, :index))
+    |> redirect(to: connection_path(conn, :index))
   end
 
   defp sign_in(user, password, conn) do
     if checkpw(password, user.mdp) do
       conn
       |> put_session(:current_user, %{id: user.id, username: user.login})
-      |> put_flash(:info, "Sign in successful!")
-      |> redirect(to: page_path(conn, :index))
+      |> redirect(to: menu_path(conn, :index))
     else
       conn
       |> put_session(:current_user, nil)
       |> put_flash(:error, "Invalid username/password combination!")
-      |> redirect(to: page_path(conn, :index))
+      |> redirect(to: connection_path(conn, :index))
     end
   end
 
