@@ -1,0 +1,22 @@
+<h2> Voici votre liste </h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Intitulé</th>
+      <th>Lien</th>
+      <th>Commentaire</th>
+      <th>Note</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for present <- @user.presents do %>
+    <tr>
+      <td><%= present.label %></td>
+      <td><%= present.link %></td>
+      <td><%= present.comment %></td>
+      <td><%= present.note %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
