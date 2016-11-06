@@ -1,4 +1,4 @@
-<a href="/present"> Votre liste </a>
+<%= link "Votre liste", to: present_path(@conn, :index) %>
 </br>
 <p> Listes </p>
 </br>

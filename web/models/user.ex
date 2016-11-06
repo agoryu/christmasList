@@ -2,7 +2,7 @@ defmodule ChristmasList.User do
   use ChristmasList.Web, :model
 
   schema "users" do
-    field :login, :string
+    field :login, :string, unique: true
     field :mdp, :string
     field :email, :string
 

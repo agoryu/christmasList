@@ -18,7 +18,7 @@ defmodule ChristmasList.Router do
 
     get "/", PageController, :index
     get "/menu", MenuController, :index
-    get "/present", PresentController, :index 
+    resources "/present", PresentController
     resources "/connection", ConnectionController, only: [:new, :create]
 
     resources "/users", UserController

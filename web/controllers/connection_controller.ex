@@ -21,7 +21,7 @@ defmodule ChristmasList.ConnectionController do
   defp sign_in(user, password, conn) do
     if checkpw(password, user.mdp) do
       conn
-      |> put_session(:current_user, %{id: user.id, username: user.login})
+      |> put_session(:current_user, user)
       |> redirect(to: menu_path(conn, :index))
     else
       conn

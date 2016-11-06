@@ -1,0 +1,6 @@
+<h2>Nouveau cadeau</h2>
+
+<%= render "form.html", changeset: @changeset,
+                        action: present_path(@conn, :create) %>
+
+<%= link "Back", to: present_path(@conn, :index) %>

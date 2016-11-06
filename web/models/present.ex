@@ -17,6 +17,7 @@ defmodule ChristmasList.Present do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:label, :link, :comment, :note])
-    |> validate_required([:label, :link, :comment, :note])
+    |> validate_required([:label, :note])
+    |> assoc_constraint(:user)
   end
 end
