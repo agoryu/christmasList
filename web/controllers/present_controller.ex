@@ -27,6 +27,11 @@ defmodule ChristmasList.PresentController do
     end
   end
 
+  def show(conn, %{"id" => id}) do
+    user = User |> Repo.get!(id) |> Repo.preload([:presents])
+    render(conn, "show.html", user: user)
+  end
+
   defp getUsetId(conn) do
     Map.get(get_session(conn, :current_user), :id)
   end

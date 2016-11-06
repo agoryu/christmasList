@@ -1,4 +1,4 @@
-<h2> Voici votre liste </h2>
+<h2> Liste de <%= @user.login %> </h2>
 <table class="table">
   <thead>
     <tr>
@@ -20,5 +20,3 @@
 <% end %>
   </tbody>
 </table>
-<%= link "Ajouter", to: present_path(@conn, :new) %></br>
-<%= link "Retour", to: menu_path(@conn, :index) %>

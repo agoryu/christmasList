@@ -1,7 +1,7 @@
 <%= link "Votre liste", to: present_path(@conn, :index) %>
 </br>
-<p> Listes </p>
+<%= link "Liste", to: user_path(@conn, :index) %>
 </br>
-<p> Configuration </p>
+<%= link "Configuration", to: user_path(@conn, :edit, @user) %>
 </br>
 <p> Contact </p>
